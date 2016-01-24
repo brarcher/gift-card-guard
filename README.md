@@ -1,0 +1,2 @@
+# gift-card-guard
+Manage gift cards, their current values, and an image of the most recent receipt
