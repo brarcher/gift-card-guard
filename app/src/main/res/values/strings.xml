@@ -3,4 +3,25 @@
     <string name="action_add">Add</string>
 
     <string name="noGiftCards">You don\'t have any gift cards at the moment. Click the "+" (plus) button up top to get started.\n\nGift Card Guard lets you manage gift cards and their current values. An optional image of a gift card receipt will help keep retailers honest if a issue is found with the gift card.</string>
+
+    <string name="storeName">Store</string>
+    <string name="value">Value</string>
+    <string name="cardId">Card ID</string>
+    <string name="receipt">Receipt</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="capture">Capture</string>
+    <string name="view">View</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+
+    <string name="editGiftCardTitle">Edit Gift Card</string>
+    <string name="addGiftCardTitle">Add Gift Card</string>
+
+    <string name="noStoreError">No Store entered</string>
+    <string name="noValueError">No Value entered</string>
+
+    <string name="currency">$</string>
+    <string name="cardIdFormat">%1$s: %2$s</string>
 </resources>
