@@ -2,6 +2,9 @@
 <manifest package="protect.gift_card_guard"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-feature android:required="true" android:name="android.hardware.camera"/>
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +24,12 @@
         <activity
             android:name=".GiftCardViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ReceiptViewActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".GiftCardViewActivity"/>
     </application>
 
 </manifest>
