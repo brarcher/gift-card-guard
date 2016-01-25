@@ -21,4 +21,7 @@
 
     <string name="noStoreError">No Store entered</string>
     <string name="noValueError">No Value entered</string>
+
+    <string name="currency">$</string>
+    <string name="cardIdFormat">%1$s: %2$s</string>
 </resources>
