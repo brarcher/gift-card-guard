@@ -1,5 +1,6 @@
 package protect.gift_card_guard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.action_add)
         {
+            Intent i = new Intent(getApplicationContext(), GiftCardViewActivity.class);
+            startActivity(i);
             return true;
         }
 
