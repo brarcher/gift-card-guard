@@ -22,6 +22,8 @@ android {
         disable "ButtonStyle"
     }
 
+    // This is for Robolectric support for SDK 23
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -29,4 +31,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     testCompile 'junit:junit:4.12'
+    testCompile "org.robolectric:robolectric:3.0"
 }
