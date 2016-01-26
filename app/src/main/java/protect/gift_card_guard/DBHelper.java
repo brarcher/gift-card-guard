@@ -57,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper
         contentValues.put(GiftCardDbIds.VALUE, value);
         contentValues.put(GiftCardDbIds.RECEIPT, receipt);
         final long newId = db.insert(GiftCardDbIds.TABLE, null, contentValues);
-        return (newId != 1);
+        return (newId != -1);
     }
 
 
