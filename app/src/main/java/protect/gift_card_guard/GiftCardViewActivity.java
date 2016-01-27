@@ -27,7 +27,6 @@ public class GiftCardViewActivity extends AppCompatActivity
 {
     private static final String TAG = "GiftCardGuard";
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    private static final String RECEIPT_IMAGE_DIR = "receipts";
 
     private String capturedUncommittedReceipt = null;
 
