@@ -3,6 +3,7 @@ package protect.gift_card_guard;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
@@ -13,8 +14,10 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.annotation.Config;
+import org.robolectric.util.ActivityController;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.robolectric.Shadows.shadowOf;
@@ -61,5 +64,36 @@ public class MainActivityTest
 
         assertEquals(new ComponentName(activity, GiftCardViewActivity.class), intent.getComponent());
         assertNull(intent.getExtras());
+    }
+
+    @Test
+    public void addOneGiftCard()
+    {
+        ActivityController activityController = Robolectric.buildActivity(MainActivity.class).create();
+
+        Activity mainActivity = (Activity)activityController.get();
+        activityController.start();
+        activityController.resume();
+
+        TextView helpText = (TextView)mainActivity.findViewById(R.id.helpText);
+        ListView list = (ListView)mainActivity.findViewById(R.id.list);
+
+        assertEquals(0, list.getCount());
+
+        DBHelper db = new DBHelper(mainActivity);
+        db.insertGiftCard("store", "cardId", "value", "receipt");
+
+        assertEquals(View.VISIBLE, helpText.getVisibility());
+        assertEquals(View.GONE, list.getVisibility());
+
+        activityController.pause();
+        activityController.resume();
+
+        assertEquals(View.GONE, helpText.getVisibility());
+        assertEquals(View.VISIBLE, list.getVisibility());
+
+        assertEquals(1, list.getAdapter().getCount());
+        Cursor cursor = (Cursor)list.getAdapter().getItem(0);
+        assertNotNull(cursor);
     }
 }
