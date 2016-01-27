@@ -69,6 +69,16 @@ public class DatabaseTest
     }
 
     @Test
+    public void updateMissingGiftCard()
+    {
+        assertEquals(0, db.getGiftCardCount());
+
+        boolean result = db.updateGiftCard(1, "store1", "cardId1", "value1", "receipt1");
+        assertEquals(false, result);
+        assertEquals(0, db.getGiftCardCount());
+    }
+
+    @Test
     public void emptyGiftCardValues()
     {
         boolean result = db.insertGiftCard("", "", "", "");
