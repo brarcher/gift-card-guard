@@ -1,0 +1,14 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:capitalize="characters"
+        android:defaultValue="@string/pref_default_currency"
+        android:inputType="text"
+        android:key="currency"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:title="@string/pref_title_currency"/>
+
+</PreferenceScreen>
