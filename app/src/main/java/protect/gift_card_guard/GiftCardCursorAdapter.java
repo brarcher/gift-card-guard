@@ -43,7 +43,7 @@ class GiftCardCursorAdapter extends CursorAdapter
         storeField.setText(giftCard.store);
         valueField.setText(giftCard.value);
 
-        String defaultCurrency = view.getResources().getString(R.string.currency);
+        String defaultCurrency = view.getResources().getString(R.string.pref_default_currency);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         String currency = preferences.getString("currency", defaultCurrency);
         currencyField.setText(currency);
