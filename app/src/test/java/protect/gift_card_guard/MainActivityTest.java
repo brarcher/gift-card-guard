@@ -47,10 +47,11 @@ public class MainActivityTest
         final Menu menu = shadowOf(activity).getOptionsMenu();
         assertTrue(menu != null);
 
-        // Only the + is in the menu
-        assertEquals(menu.size(), 1);
+        // The settings and add button should be present
+        assertEquals(menu.size(), 2);
 
         assertEquals("Add", menu.findItem(R.id.action_add).getTitle().toString());
+        assertEquals("Settings", menu.findItem(R.id.action_settings).getTitle().toString());
     }
 
     @Test
@@ -63,6 +64,19 @@ public class MainActivityTest
         Intent intent = shadowOf(activity).peekNextStartedActivityForResult().intent;
 
         assertEquals(new ComponentName(activity, GiftCardViewActivity.class), intent.getComponent());
+        assertNull(intent.getExtras());
+    }
+
+    @Test
+    public void clickSettingsLaunchesGiftCardViewActivity()
+    {
+        final MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+
+        shadowOf(activity).clickMenuItem(R.id.action_settings);
+
+        Intent intent = shadowOf(activity).peekNextStartedActivityForResult().intent;
+
+        assertEquals(new ComponentName(activity, SettingsActivity.class), intent.getComponent());
         assertNull(intent.getExtras());
     }
 

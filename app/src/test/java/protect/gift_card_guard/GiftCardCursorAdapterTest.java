@@ -1,7 +1,9 @@
 package protect.gift_card_guard;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.TextView;
 
@@ -31,6 +33,11 @@ public class GiftCardCursorAdapterTest
         Cursor cursor = db.getGiftCardCursor();
         cursor.moveToFirst();
 
+        final String CURRENCY = "MadeUpCurrency";
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(
+                activity);
+        preferences.edit().putString("currency", CURRENCY).apply();
+
         GiftCardCursorAdapter adapter = new GiftCardCursorAdapter(activity.getApplicationContext(), cursor);
 
         View view = adapter.newView(activity.getApplicationContext(), cursor, null);
@@ -48,9 +55,7 @@ public class GiftCardCursorAdapterTest
         String cardIdText = String.format(cardIdFormat, cardIdLabel, "cardId");
         assertEquals(cardIdText, cardIdField.getText().toString());
 
-        final String currency = activity.getResources().getString(R.string.currency);
-
         final TextView currencyField = (TextView) view.findViewById(R.id.currency);
-        assertEquals(currency, currencyField.getText().toString());
+        assertEquals(CURRENCY, currencyField.getText().toString());
     }
 }

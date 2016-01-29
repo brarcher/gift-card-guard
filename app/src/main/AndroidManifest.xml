@@ -22,6 +22,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".SettingsActivity"
+            android:theme="@style/AppTheme"
+            android:label="@string/action_settings"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".GiftCardViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop"

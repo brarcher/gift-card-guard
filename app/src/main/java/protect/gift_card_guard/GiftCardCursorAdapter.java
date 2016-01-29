@@ -1,7 +1,9 @@
 package protect.gift_card_guard;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,7 @@ class GiftCardCursorAdapter extends CursorAdapter
     {
         // Find fields to populate in inflated template
         TextView storeField = (TextView) view.findViewById(R.id.store);
+        TextView currencyField = (TextView) view.findViewById(R.id.currency);
         TextView valueField = (TextView) view.findViewById(R.id.value);
         TextView cardIdField = (TextView) view.findViewById(R.id.cardId);
 
@@ -39,6 +42,11 @@ class GiftCardCursorAdapter extends CursorAdapter
         // Populate fields with extracted properties
         storeField.setText(giftCard.store);
         valueField.setText(giftCard.value);
+
+        String defaultCurrency = view.getResources().getString(R.string.pref_default_currency);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+        String currency = preferences.getString("currency", defaultCurrency);
+        currencyField.setText(currency);
 
         String cardIdFormat = view.getResources().getString(R.string.cardIdFormat);
         String cardIdLabel = view.getResources().getString(R.string.cardId);
