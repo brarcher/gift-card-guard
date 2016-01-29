@@ -47,10 +47,11 @@ public class MainActivityTest
         final Menu menu = shadowOf(activity).getOptionsMenu();
         assertTrue(menu != null);
 
-        // Only the + is in the menu
-        assertEquals(menu.size(), 1);
+        // The settings and add button should be present
+        assertEquals(menu.size(), 2);
 
         assertEquals("Add", menu.findItem(R.id.action_add).getTitle().toString());
+        assertEquals("Settings", menu.findItem(R.id.action_settings).getTitle().toString());
     }
 
     @Test
