@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Tessere regalo</string>
+    <string name="action_add">Aggiungi</string>
+
+    <string name="noGiftCards">Al momento non hai alcuna tessera regalo. Premi sul bottone "+" (più) in alto per iniziare.\n\nTessere regalo ti permette di gestire le tessere regalo e il loro attuale valore. Un\'immagine opzionale della tessera ti permetterà di gestire i problemi con i commercianti se vengono trovate anomalie.</string>
+
+    <string name="storeName">Tessera</string>
+    <string name="value">Valore</string>
+    <string name="cardId">Codice carta</string>
+    <string name="receipt">Immagine</string>
+
+    <string name="cancel">Annulla</string>
+    <string name="save">Salva</string>
+    <string name="capture">Scatta</string>
+    <string name="view">Guarda</string>
+    <string name="update">Aggiorna</string>
+    <string name="delete">Elimina</string>
+
+    <string name="editGiftCardTitle">Modifica carta regalo</string>
+    <string name="addGiftCardTitle">Aggiungi carta regalo</string>
+
+    <string name="noStoreError">Nome del negozio non inserito</string>
+    <string name="noValueError">Valore non inserito</string>
+    <string name="pictureCaptureError">Impossibile scattare una foto con la telecamera</string>
+
+    <string name="currency">€</string>
+    <string name="cardIdFormat">%1$s: %2$s</string>
+</resources>
