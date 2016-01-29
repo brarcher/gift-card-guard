@@ -68,6 +68,19 @@ public class MainActivityTest
     }
 
     @Test
+    public void clickSettingsLaunchesGiftCardViewActivity()
+    {
+        final MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+
+        shadowOf(activity).clickMenuItem(R.id.action_settings);
+
+        Intent intent = shadowOf(activity).peekNextStartedActivityForResult().intent;
+
+        assertEquals(new ComponentName(activity, SettingsActivity.class), intent.getComponent());
+        assertNull(intent.getExtras());
+    }
+
+    @Test
     public void addOneGiftCard()
     {
         ActivityController activityController = Robolectric.buildActivity(MainActivity.class).create();
