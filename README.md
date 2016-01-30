@@ -1,7 +1,7 @@
 # Gift Card Guard
 [![Build Status](https://travis-ci.org/brarcher/gift-card-guard.svg?branch=master)](https://travis-ci.org/brarcher/gift-card-guard)
 
-[![F-Droid](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Get_it_on_F-Droid.svg/320px-Get_it_on_F-Droid.svg.png)](https://f-droid.org/repository/browse/?fdid=protect.gift_card_guard "Gift Card Guard on F-Droid")
+[![F-Droid](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Get_it_on_F-Droid.svg/160px-Get_it_on_F-Droid.svg.png)](https://f-droid.org/repository/browse/?fdid=protect.gift_card_guard "Gift Card Guard on F-Droid")
 
 Manage gift cards, their current values, and an image of the most recent receipt. Never forget
 how much a gift card is worth, or be unable to use a gift card because the proof of its
