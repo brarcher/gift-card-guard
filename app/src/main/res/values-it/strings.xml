@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Tessere regalo</string>
     <string name="action_add">Aggiungi</string>
-
+    <string name="action_settings">Impostazioni</string>
+ 
     <string name="noGiftCards">Al momento non hai alcuna tessera regalo. Premi sul bottone "+" (più) in alto per iniziare.\n\nTessere regalo ti permette di gestire le tessere regalo e il loro attuale valore. Un\'immagine opzionale della tessera ti permetterà di gestire i problemi con i commercianti se vengono trovate anomalie.</string>
 
     <string name="storeName">Tessera</string>
