@@ -3,6 +3,11 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="protect.gift_card_guard.MainActivity">
     <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="@string/action_settings"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/action_add"
         android:icon="@drawable/ic_add_white_24dp"
         android:title="@string/action_add"

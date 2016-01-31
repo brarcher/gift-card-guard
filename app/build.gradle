@@ -20,6 +20,7 @@ android {
     lintOptions {
         disable "GoogleAppIndexingWarning"
         disable "ButtonStyle"
+        disable "AlwaysShowAction"
     }
 
     // This is for Robolectric support for SDK 23

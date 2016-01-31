@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.add_menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -88,6 +88,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_add)
         {
             Intent i = new Intent(getApplicationContext(), GiftCardViewActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.action_settings)
+        {
+            Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
             startActivity(i);
             return true;
         }
