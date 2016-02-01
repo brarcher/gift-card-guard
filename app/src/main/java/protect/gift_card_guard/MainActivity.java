@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
 {
+    private static final String TAG = "GiftCardGuard";
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -61,14 +64,21 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 Cursor selected = (Cursor) parent.getItemAtPosition(position);
-                GiftCard giftCard = GiftCard.toGiftCard(selected);
+                if(selected != null)
+                {
+                    GiftCard giftCard = GiftCard.toGiftCard(selected);
 
-                Intent i = new Intent(view.getContext(), GiftCardViewActivity.class);
-                final Bundle b = new Bundle();
-                b.putInt("id", giftCard.id);
-                b.putBoolean("update", true);
-                i.putExtras(b);
-                startActivity(i);
+                    Intent i = new Intent(view.getContext(), GiftCardViewActivity.class);
+                    final Bundle b = new Bundle();
+                    b.putInt("id", giftCard.id);
+                    b.putBoolean("update", true);
+                    i.putExtras(b);
+                    startActivity(i);
+                }
+                else
+                {
+                    Log.i(TAG, "Selected missing gift card at position " + position);
+                }
             }
         });
     }
