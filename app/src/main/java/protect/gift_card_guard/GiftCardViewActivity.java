@@ -2,6 +2,7 @@ package protect.gift_card_guard;
 
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -128,7 +129,15 @@ public class GiftCardViewActivity extends AppCompatActivity
                 }
 
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+                PackageManager packageManager = getPackageManager();
+                if(packageManager == null)
+                {
+                    Log.e(TAG, "Failed to get package manager, cannot take picture");
+                    Toast.makeText(getApplicationContext(), R.string.pictureCaptureError, Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if (takePictureIntent.resolveActivity(packageManager) != null)
                 {
                     File imageLocation = getNewImageLocation();
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageLocation));
