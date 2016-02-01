@@ -305,6 +305,13 @@ public class GiftCardViewActivity extends AppCompatActivity
     {
         File imageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 
+        if(imageDir == null)
+        {
+            Log.e(TAG, "Failed to locate directory for pictures");
+            Toast.makeText(this, R.string.pictureCaptureError, Toast.LENGTH_LONG).show();
+            return null;
+        }
+
         if(imageDir.exists() == false)
         {
             if(imageDir.mkdirs() == false)
