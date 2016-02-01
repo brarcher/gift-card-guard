@@ -137,17 +137,17 @@ public class GiftCardViewActivity extends AppCompatActivity
                     return;
                 }
 
-                if (takePictureIntent.resolveActivity(packageManager) != null)
+                if(takePictureIntent.resolveActivity(packageManager) == null)
                 {
-                    File imageLocation = getNewImageLocation();
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageLocation));
-                    capturedUncommittedReceipt = imageLocation.getAbsolutePath();
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                }
-                else
-                {
+                    Log.e(TAG, "Could not find an activity to take a picture");
                     Toast.makeText(getApplicationContext(), R.string.pictureCaptureError, Toast.LENGTH_LONG).show();
+                    return;
                 }
+
+                File imageLocation = getNewImageLocation();
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageLocation));
+                capturedUncommittedReceipt = imageLocation.getAbsolutePath();
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         };
 
