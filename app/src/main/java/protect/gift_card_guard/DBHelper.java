@@ -12,7 +12,7 @@ public class DBHelper extends SQLiteOpenHelper
     public static final String DATABASE_NAME = "GiftCardGuard.db";
     public static final int DATABASE_VERSION = 1;
 
-    class GiftCardDbIds
+    static class GiftCardDbIds
     {
         public static final String TABLE = "cards";
         public static final String ID = "_id";
