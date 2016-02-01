@@ -126,5 +126,6 @@ public class DatabaseTest
         }
 
         assertTrue(cursor.isAfterLast());
+        cursor.close();
     }
 }
