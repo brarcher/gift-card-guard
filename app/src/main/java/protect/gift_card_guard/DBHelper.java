@@ -50,13 +50,16 @@ public class DBHelper extends SQLiteOpenHelper
     public boolean insertGiftCard(final String store, final String cardId, final String value,
                                   final String receipt)
     {
-        SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(GiftCardDbIds.STORE, store);
         contentValues.put(GiftCardDbIds.CARD_ID, cardId);
         contentValues.put(GiftCardDbIds.VALUE, value);
         contentValues.put(GiftCardDbIds.RECEIPT, receipt);
+
+        SQLiteDatabase db = getWritableDatabase();
         final long newId = db.insert(GiftCardDbIds.TABLE, null, contentValues);
+        db.close();
+
         return (newId != -1);
     }
 
@@ -64,15 +67,18 @@ public class DBHelper extends SQLiteOpenHelper
     public boolean updateGiftCard(final int id, final String store, final String cardId,
                                   final String value, final String receipt)
     {
-        SQLiteDatabase db = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(GiftCardDbIds.STORE, store);
         contentValues.put(GiftCardDbIds.CARD_ID, cardId);
         contentValues.put(GiftCardDbIds.VALUE, value);
         contentValues.put(GiftCardDbIds.RECEIPT, receipt);
+
+        SQLiteDatabase db = getWritableDatabase();
         int rowsUpdated = db.update(GiftCardDbIds.TABLE, contentValues,
                 GiftCardDbIds.ID + "=?",
                 new String[]{Integer.toString(id)});
+        db.close();
+
         return (rowsUpdated == 1);
     }
 
@@ -91,6 +97,7 @@ public class DBHelper extends SQLiteOpenHelper
         }
 
         data.close();
+        db.close();
 
         return card;
     }
@@ -101,6 +108,7 @@ public class DBHelper extends SQLiteOpenHelper
         int rowsDeleted =  db.delete(GiftCardDbIds.TABLE,
                 GiftCardDbIds.ID + " = ? ",
                 new String[]{String.format("%d", id)});
+        db.close();
         return (rowsDeleted == 1);
     }
 
@@ -126,6 +134,7 @@ public class DBHelper extends SQLiteOpenHelper
         }
 
         data.close();
+        db.close();
 
         return numItems;
     }
