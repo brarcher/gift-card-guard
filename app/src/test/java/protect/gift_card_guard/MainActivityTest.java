@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.database.Cursor;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -50,8 +51,13 @@ public class MainActivityTest
         // The settings and add button should be present
         assertEquals(menu.size(), 2);
 
-        assertEquals("Add", menu.findItem(R.id.action_add).getTitle().toString());
-        assertEquals("Settings", menu.findItem(R.id.action_settings).getTitle().toString());
+        MenuItem addItem = menu.findItem(R.id.action_add);
+        assertNotNull(addItem);
+        assertEquals("Add", addItem.getTitle().toString());
+
+        MenuItem settingsItem = menu.findItem(R.id.action_settings);
+        assertNotNull(settingsItem);
+        assertEquals("Settings", settingsItem.getTitle().toString());
     }
 
     @Test

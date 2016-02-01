@@ -2,6 +2,7 @@ package protect.gift_card_guard;
 
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -128,17 +129,25 @@ public class GiftCardViewActivity extends AppCompatActivity
                 }
 
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+                PackageManager packageManager = getPackageManager();
+                if(packageManager == null)
                 {
-                    File imageLocation = getNewImageLocation();
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageLocation));
-                    capturedUncommittedReceipt = imageLocation.getAbsolutePath();
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                }
-                else
-                {
+                    Log.e(TAG, "Failed to get package manager, cannot take picture");
                     Toast.makeText(getApplicationContext(), R.string.pictureCaptureError, Toast.LENGTH_LONG).show();
+                    return;
                 }
+
+                if(takePictureIntent.resolveActivity(packageManager) == null)
+                {
+                    Log.e(TAG, "Could not find an activity to take a picture");
+                    Toast.makeText(getApplicationContext(), R.string.pictureCaptureError, Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                File imageLocation = getNewImageLocation();
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageLocation));
+                capturedUncommittedReceipt = imageLocation.getAbsolutePath();
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         };
 
@@ -295,6 +304,13 @@ public class GiftCardViewActivity extends AppCompatActivity
     private File getNewImageLocation()
     {
         File imageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+
+        if(imageDir == null)
+        {
+            Log.e(TAG, "Failed to locate directory for pictures");
+            Toast.makeText(this, R.string.pictureCaptureError, Toast.LENGTH_LONG).show();
+            return null;
+        }
 
         if(imageDir.exists() == false)
         {
