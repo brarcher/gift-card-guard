@@ -30,6 +30,7 @@
             android:name=".GiftCardViewActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".ReceiptViewActivity"
