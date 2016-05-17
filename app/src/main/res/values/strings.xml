@@ -1,4 +1,6 @@
-<resources>
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <string name="app_name">Gift Card Guard</string>
     <string name="action_add">Add</string>
     <string name="action_settings">Settings</string>
@@ -16,6 +18,7 @@
     <string name="view">View</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="ok">OK</string>
 
     <string name="editGiftCardTitle">Edit Gift Card</string>
     <string name="addGiftCardTitle">Add Gift Card</string>
@@ -29,4 +32,12 @@
     <string name="pref_header_general">General</string>
     <string name="pref_title_currency">Currency to display</string>
     <string name="pref_default_currency">$</string>
+
+    <string name="about">About</string>
+    <string name="app_copyright_fmt">Copyright 2016-<xliff:g>%s</xliff:g> Branden Archer</string>
+    <string name="app_license">Licensed under the GPLv3.</string>
+    <string name="about_title_fmt">About <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="debug_version_fmt">Version: <xliff:g id="version">%s</xliff:g></string>
+    <string name="app_revision_fmt">Revision Information: <xliff:g id="app_revision_url">%s</xliff:g></string>
+    <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> uses the following third-party libraries: <xliff:g id="app_libraries_list">%s</xliff:g></string>
 </resources>
