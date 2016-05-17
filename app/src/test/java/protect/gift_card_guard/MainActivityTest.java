@@ -49,7 +49,7 @@ public class MainActivityTest
         assertTrue(menu != null);
 
         // The settings and add button should be present
-        assertEquals(menu.size(), 2);
+        assertEquals(menu.size(), 3);
 
         MenuItem addItem = menu.findItem(R.id.action_add);
         assertNotNull(addItem);
@@ -58,6 +58,10 @@ public class MainActivityTest
         MenuItem settingsItem = menu.findItem(R.id.action_settings);
         assertNotNull(settingsItem);
         assertEquals("Settings", settingsItem.getTitle().toString());
+
+        MenuItem aboutItem = menu.findItem(R.id.action_about);
+        assertNotNull(aboutItem);
+        assertEquals("About", aboutItem.getTitle().toString());
     }
 
     @Test
