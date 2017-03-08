@@ -27,5 +27,4 @@ Windows:
 
 # Thanks
 
-App icon originals by [Freepik](https://www.flaticon.com) and distributed under the [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) license,
-and formatted using [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html).
+App icon '[Gift Card](https://thenounproject.com/term/gift-card/842449/)' by Magicon from the Noun Project
