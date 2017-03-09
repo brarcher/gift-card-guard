@@ -18,7 +18,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.common.collect.ImmutableMap;
+
 import java.util.Calendar;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -127,6 +130,30 @@ public class MainActivity extends AppCompatActivity
 
     private void displayAboutDialog()
     {
+        final Map<String, String> USED_LIBRARIES = ImmutableMap.of
+        (
+            "Guava", "https://github.com/google/guava"
+        );
+
+        final Map<String, String> IMAGE_RESOURCES = ImmutableMap.of
+        (
+            "'Gift Card' by Magicon from the Noun Project", "https://thenounproject.com/term/gift-card/842449/"
+        );
+
+        StringBuilder libs = new StringBuilder().append("<ul>");
+        for (Map.Entry<String, String> entry : USED_LIBRARIES.entrySet())
+        {
+            libs.append("<li><a href=\"").append(entry.getValue()).append("\">").append(entry.getKey()).append("</a></li>");
+        }
+        libs.append("</ul>");
+
+        StringBuilder imageResources = new StringBuilder().append("<ul>");
+        for (Map.Entry<String, String> entry : IMAGE_RESOURCES.entrySet())
+        {
+            imageResources.append("<li><a href=\"").append(entry.getValue()).append("\">").append(entry.getKey()).append("</a></li>");
+        }
+        imageResources.append("</ul>");
+
         String appName = getString(R.string.app_name);
         int year = Calendar.getInstance().get(Calendar.YEAR);
 
@@ -162,7 +189,11 @@ public class MainActivity extends AppCompatActivity
             "</p><hr/><p>" +
             String.format(getString(R.string.app_copyright_fmt), year) +
             "</p><hr/><p>" +
-            getString(R.string.app_license);
+            getString(R.string.app_license) +
+            "</p><hr/><p>" +
+            String.format(getString(R.string.app_libraries), appName, libs.toString()) +
+            "</p><hr/><p>" +
+            String.format(getString(R.string.image_resources), appName, imageResources.toString());
 
         wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
         new AlertDialog.Builder(this)
