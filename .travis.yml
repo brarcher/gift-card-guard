@@ -1,4 +1,12 @@
 language: android
+
+env:
+  global:
+    # Gradle sometimes takes too much memory, resulting in
+    # memory pressure that fails the build. Reduce its initial
+    # heap to help reduce issues.
+    - GRADLE_OPTS="-Xms128m"
+
 android:
   components:
     # Uncomment the lines below if you want to
