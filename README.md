@@ -27,6 +27,10 @@ Windows:
 ./gradlew.bat build
 ```
 
+# Translating
+
+If you are interested in translating this application to another language, create a pull request with changes or find the project listing on  [Transifex](https://www.transifex.com/na-243/gift-card-guard).
+
 # Thanks
 
 App icon '[Gift Card](https://thenounproject.com/term/gift-card/842449/)' by Magicon from the Noun Project
