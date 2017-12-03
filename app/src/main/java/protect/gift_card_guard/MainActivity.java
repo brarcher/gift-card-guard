@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
 
         final Map<String, String> IMAGE_RESOURCES = ImmutableMap.of
         (
-            "'Gift Card' by Magicon from the Noun Project", "https://thenounproject.com/term/gift-card/842449/"
+            "App icon by Samy", "https://plus.google.com/+SamyMarBoyTonny91"
         );
 
         StringBuilder libs = new StringBuilder().append("<ul>");
