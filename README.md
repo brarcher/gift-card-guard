@@ -33,4 +33,4 @@ If you are interested in translating this application to another language, creat
 
 # Thanks
 
-App icon '[Gift Card](https://thenounproject.com/term/gift-card/842449/)' by Magicon from the Noun Project
+App icon and Google Play feature graphic by [Samy](https://plus.google.com/+SamyMarBoyTonny91).
