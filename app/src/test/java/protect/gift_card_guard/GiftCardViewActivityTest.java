@@ -16,12 +16,12 @@ import android.widget.TextView;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricGradleTestRunner;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.android.controller.ActivityController;
 import org.robolectric.annotation.Config;
-import org.robolectric.res.builder.RobolectricPackageManager;
 import org.robolectric.shadows.ShadowActivity;
-import org.robolectric.util.ActivityController;
+import org.robolectric.res.builder.RobolectricPackageManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +31,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.robolectric.Shadows.shadowOf;
 
-@RunWith(RobolectricGradleTestRunner.class)
+@RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 17)
 public class GiftCardViewActivityTest
 {
@@ -41,8 +41,7 @@ public class GiftCardViewActivityTest
     private void registerMediaStoreIntentHandler()
     {
         // Add something that will 'handle' the media capture intent
-        RobolectricPackageManager packageManager = (RobolectricPackageManager) shadowOf(
-                RuntimeEnvironment.application).getPackageManager();
+        RobolectricPackageManager packageManager = shadowOf(RuntimeEnvironment.application.getPackageManager());
 
         ResolveInfo info = new ResolveInfo();
         info.isDefault = true;
