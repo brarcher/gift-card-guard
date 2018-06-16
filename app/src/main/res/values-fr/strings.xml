@@ -1,0 +1,44 @@
+<resources
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Garde de Carte-Cadeau</string>
+    <string name="action_add">Ajouter</string>
+    <string name="action_settings">Paramètres</string>
+
+    <string name="noGiftCards">Vous n\'avez pas de carte cadeau pour le moment. Cliquez sur le bouton \"+\" (plus) en haut pour en ajouter.\n\nLe Garde de Carte-Cadeau vous permet de gérer des cartes-cadeaux et leurs valeurs actuelles. L\'ajout optionnel d\'une image d\'un reçu de la carte-cadeau vous aidera à démontrer la validité de la carte-cadeau face à des commerçants malhonnêtes si il y a un problème avec la carte.</string>
+
+    <string name="storeName">Magasin</string>
+    <string name="value">Valeur</string>
+    <string name="cardId">ID de la carte</string>
+    <string name="receipt">Reçu</string>
+
+    <string name="cancel">Annuler</string>
+    <string name="save">Sauvegarder</string>
+    <string name="capture">Prendre</string>
+    <string name="view">Voir</string>
+    <string name="update">Mettre à jour</string>
+    <string name="delete">Supprimer</string>
+    <string name="ok">OK</string>
+
+    <string name="editGiftCardTitle">Modifier la Carte-Cadeau</string>
+    <string name="addGiftCardTitle">Ajouter une Carte-Cadeau</string>
+
+    <string name="noStoreError">Aucun Magasin renseigné</string>
+    <string name="noValueError">Aucune valeur renseignée</string>
+    <string name="pictureCaptureError">Impossible de prendre une image avec l\'appareil photo</string>
+
+    <string name="cardIdFormat">%1$s : %2$s</string>
+
+    <string name="pref_header_general">Général</string>
+    <string name="pref_title_currency">Devise à afficher</string>
+    <string name="pref_default_currency">$</string>
+
+    <string name="about">À propos</string>
+    <string name="app_copyright_fmt">Copyright 2016-<xliff:g>%d</xliff:g> Branden Archer</string>
+    <string name="app_license">Sous licence GPLv3.</string>
+    <string name="about_title_fmt">À propos de <xliff:g id="app_name">%s</xliff:g></string>
+    <string name="debug_version_fmt">Version : <xliff:g id="version">%s</xliff:g></string>
+    <string name="app_revision_fmt">Informations de révision : <xliff:g id="app_revision_url">%s</xliff:g></string>
+    <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> utilise les librairies tierces suivantes : <xliff:g id="app_libraries_list">%s</xliff:g></string>
+    <string name="image_resources"><xliff:g id="app_name">%s</xliff:g> utilise des images de : <xliff:g id="sound_sources_list">%s</xliff:g></string>
+</resources>

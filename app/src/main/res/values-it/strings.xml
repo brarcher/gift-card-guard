@@ -4,7 +4,7 @@
     <string name="app_name">Tessere regalo</string>
     <string name="action_add">Aggiungi</string>
     <string name="action_settings">Impostazioni</string>
- 
+
     <string name="noGiftCards">Al momento non hai alcuna tessera regalo. Premi sul bottone "+" (più) in alto per iniziare.\n\nTessere regalo ti permette di gestire le tessere regalo e il loro attuale valore. Un\'immagine opzionale della tessera ti permetterà di gestire i problemi con i commercianti se vengono trovate anomalie.</string>
 
     <string name="storeName">Tessera</string>
@@ -18,6 +18,7 @@
     <string name="view">Guarda</string>
     <string name="update">Aggiorna</string>
     <string name="delete">Elimina</string>
+    <string name="ok">Ok</string>
 
     <string name="editGiftCardTitle">Modifica carta regalo</string>
     <string name="addGiftCardTitle">Aggiungi carta regalo</string>
@@ -33,12 +34,9 @@
     <string name="pref_default_currency">€</string>
 
     <string name="about">Informazioni</string>
-    <string name="app_copyright_fmt">Copyright 2016-<xliff:g>%d</xliff:g> Branden Archer</string>
     <string name="app_license">Pubblicato sotto licenza GPLv3.</string>
     <string name="about_title_fmt">Informazioni su <xliff:g id="app_name">%s</xliff:g></string>
     <string name="debug_version_fmt">Versione: <xliff:g id="version">%s</xliff:g></string>
     <string name="app_revision_fmt">Informazione sulla revisione: <xliff:g id="app_revision_url">%s</xliff:g></string>
     <string name="app_libraries"><xliff:g id="app_name">%s</xliff:g> usa le seguenti librerie di terze parti: <xliff:g id="app_libraries_list">%s</xliff:g></string>
-
-    <string name="ok">Ok</string>
-</resources>
+    </resources>
