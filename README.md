@@ -9,9 +9,6 @@ Manage gift cards, their current values, and an image of the most recent receipt
 how much a gift card is worth, or be unable to use a gift card because the proof of its
 value is lost.
 
-If there is any interest in improving this open source project, kindly submit a pull request with
-proposed changed.
-
 # Building
 
 To build, use the gradle wrapper scripts provided in the top level directory of the project. The following will
@@ -34,3 +31,6 @@ If you are interested in translating this application to another language, find 
 # Thanks
 
 App icon and Google Play feature graphic by [Samy](https://plus.google.com/+SamyMarBoyTonny91).
+
+# Note from Developer
+The developer is currently on hiatus from the project. Questions and pull requests may not be looked at for some time. Apologies in advance.
