@@ -24,10 +24,6 @@ Windows:
 ./gradlew.bat build
 ```
 
-# Translating
-
-If you are interested in translating this application to another language, find the project listing on [Transifex](https://www.transifex.com/na-243/gift-card-guard).
-
 # Thanks
 
 App icon and Google Play feature graphic by [Samy](https://plus.google.com/+SamyMarBoyTonny91).
